@@ -1,0 +1,12 @@
+﻿<Application x:Class="MolkZip.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:MolkZip"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <BitmapImage x:Key="RedBrick" UriSource="assets\RedBricks.jpeg"/>
+            <!--<CroppedBitmap x:Key ="brick" Source="{StaticResource RedBrick}" SourceRect="30 20 105 50"/>-->
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
