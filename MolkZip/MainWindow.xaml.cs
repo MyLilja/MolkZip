@@ -41,15 +41,16 @@ namespace MolkZip
         private void OpenMolkWindow(object sender, RoutedEventArgs e)
         {
             MolkWindow molk= new MolkWindow();
-            molk.Owner = this;
             molk.Show();
+            this.Close();
+            
         }
 
         private void OpenUnmolkWindow(object sender, RoutedEventArgs e)
         {
-            UnmolkWindow unMolk = new UnmolkWindow();
-            unMolk.Owner = this;
+            UnmolkWindow unMolk = new UnmolkWindow();       
             unMolk.Show();
+            this.Close();
         }
     }
 }
