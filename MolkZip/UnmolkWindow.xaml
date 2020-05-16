@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MolkZip"
         mc:Ignorable="d"
-        Title="UnmolkWindow" Height="450" Width="800">
+        ResizeMode="NoResize"
+        Title="UnmolkWindow" Height="720" Width="1280">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource ="assets/RedBricks.jpeg" Stretch="UniformToFill"></ImageBrush>
@@ -18,6 +19,14 @@
             <Canvas.Background>
                 <ImageBrush ImageSource="assets/Whiteboard.png" Stretch="UniformToFill"/>
             </Canvas.Background>
+            <Button x:Name="goBack" Canvas.Left="260" Canvas.Top="490" Width="141" Height="64" BorderBrush="{x:Null}" Click="_previousPage">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
+                </Button.Effect>
+                <Button.Background>
+                    <ImageBrush ImageSource="assets/RedArrowLeft.png"></ImageBrush>
+                </Button.Background>
+            </Button>
         </Canvas>
 
 

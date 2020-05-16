@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MolkZip"
         mc:Ignorable="d"
+        ResizeMode="NoResize"
         Title="MainWindow" Height="720" Width="1280">
+        
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource ="assets/RedBricks.jpeg" Stretch="UniformToFill"></ImageBrush>
@@ -18,7 +20,7 @@
             <Canvas.Background>
                 <ImageBrush ImageSource="assets/Whiteboard.png" Stretch="UniformToFill"/>
             </Canvas.Background>
-            <Button x:Name="Molk" Canvas.Left="234" Canvas.Top="187" Width="218" Height="257" BorderBrush="{x:Null}" Click="OpenMolkWindow">
+            <Button x:Name="Molk" Canvas.Left="249" Canvas.Top="187" Width="203" Height="257" BorderBrush="{x:Null}" Click="OpenMolkWindow">
                 <Button.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
                 </Button.Effect>

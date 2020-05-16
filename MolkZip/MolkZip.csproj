@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -132,7 +133,16 @@
     <Resource Include="assets\Zip2.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="assets\RedArrow.png" />
+    <Resource Include="assets\RedArrowRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\RedArrowLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\ZipFiles.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

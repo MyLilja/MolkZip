@@ -23,5 +23,12 @@ namespace MolkZip
         {
             InitializeComponent();
         }
+
+        private void _previousPage(object sender, RoutedEventArgs e)
+        {
+            MainWindow homePage = new MainWindow();
+            homePage.Show();
+            this.Close();
+        }
     }
 }
