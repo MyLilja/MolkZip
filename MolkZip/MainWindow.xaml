@@ -18,6 +18,24 @@
             <Canvas.Background>
                 <ImageBrush ImageSource="assets/Whiteboard.png" Stretch="UniformToFill"/>
             </Canvas.Background>
+            <Button x:Name="Molk" Canvas.Left="234" Canvas.Top="187" Width="218" Height="257" BorderBrush="{x:Null}" Click="OpenMolkWindow">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
+                </Button.Effect>
+                <Button.Background>
+
+                    <ImageBrush ImageSource="assets/Zip2.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="Unmolk" Canvas.Left="800" Canvas.Top="187" Width="218" Height="257" BorderBrush="{x:Null}" Click="OpenUnmolkWindow">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
+                </Button.Effect>
+                <Button.Background>
+
+                    <ImageBrush ImageSource="assets/Unzip2.png"/>
+                </Button.Background>
+            </Button>
 
         </Canvas>
 

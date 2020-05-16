@@ -35,5 +35,21 @@ namespace MolkZip
             //   new Int32Rect(0, 0, 720, 1280));       //select region rect
             //croppedImage.Source = cb;                 //set image source to cropped
         }
+
+       
+
+        private void OpenMolkWindow(object sender, RoutedEventArgs e)
+        {
+            MolkWindow molk= new MolkWindow();
+            molk.Owner = this;
+            molk.Show();
+        }
+
+        private void OpenUnmolkWindow(object sender, RoutedEventArgs e)
+        {
+            UnmolkWindow unMolk = new UnmolkWindow();
+            unMolk.Owner = this;
+            unMolk.Show();
+        }
     }
 }
