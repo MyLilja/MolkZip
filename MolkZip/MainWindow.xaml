@@ -1,0 +1,43 @@
+﻿<Window x:Class="MolkZip.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MolkZip"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="720" Width="1280">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource ="assets/RedBricks.jpeg" Stretch="UniformToFill"></ImageBrush>
+        </Grid.Background>
+
+        <Canvas >
+            <Canvas.Effect>
+                <DropShadowEffect Color="#FF211D1D" BlurRadius="40" ShadowDepth="30" Opacity="0.85" Direction="301" />
+            </Canvas.Effect>
+            <Canvas.Background>
+                <ImageBrush ImageSource="assets/Whiteboard.png" Stretch="UniformToFill"/>
+            </Canvas.Background>
+            <Button x:Name="Molk" Canvas.Left="234" Canvas.Top="187" Width="218" Height="257" BorderBrush="{x:Null}" Click="OpenMolkWindow">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
+                </Button.Effect>
+                <Button.Background>
+
+                    <ImageBrush ImageSource="assets/Zip2.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="Unmolk" Canvas.Left="800" Canvas.Top="187" Width="218" Height="257" BorderBrush="{x:Null}" Click="OpenUnmolkWindow">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
+                </Button.Effect>
+                <Button.Background>
+
+                    <ImageBrush ImageSource="assets/Unzip2.png"/>
+                </Button.Background>
+            </Button>
+
+        </Canvas>
+
+    </Grid>
+</Window>
