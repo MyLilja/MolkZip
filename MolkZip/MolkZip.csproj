@@ -154,5 +154,8 @@
   <ItemGroup>
     <Resource Include="assets\UnzipFile.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\buttonHL.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

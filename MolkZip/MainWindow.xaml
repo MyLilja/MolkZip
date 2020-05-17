@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         ResizeMode="NoResize"
         Title="MainWindow" Height="720" Width="1280">
-    
+
     <Window.Resources>
         <Style x:Key="ButtonStyle" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -27,9 +27,216 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <Storyboard x:Key="RingAnimation">
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="LeftRing">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.033" Value="1.39"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.067" Value="-2.596"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="3.577"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.133" Value="-3.558"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.167" Value="-8.14"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-8.14"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.233" Value="-12.691"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.267" Value="-1.258"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-5.024"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.333" Value="-2.176"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.367" Value="3.761"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-2.402"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.433" Value="5.524"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.467" Value="5.524"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-3.161"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(SkewTransform.AngleX)" Storyboard.TargetName="LeftRing">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.033" Value="6.252"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.067" Value="6.252"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.499"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.133" Value="11.888"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.167" Value="4.99"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.267" Value="4.99"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="2.754"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.333" Value="11.606"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.367" Value="15.266"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.467" Value="15.266"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="4.742"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="LeftRing">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.033" Value="3"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.067" Value="-4.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-2.992"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.133" Value="6.02"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.167" Value="2.649"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="2.649"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.233" Value="11.82"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.267" Value="2.588"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="2.473"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.333" Value="-1.302"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.367" Value="4.382"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="10.308"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.433" Value="1.639"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.467" Value="1.639"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1.873"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="LeftRing">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.033" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.067" Value="0.949"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.133" Value="0.949"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.167" Value="0.926"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.926"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.233" Value="0.984"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.267" Value="0.984"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.991"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.333" Value="0.934"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.367" Value="0.98"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.467" Value="0.98"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0.987"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="LeftRing">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.033" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.067" Value="-10.175"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-10.175"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.133" Value="24.151"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.167" Value="24.151"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="31.381"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.233" Value="47.773"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.267" Value="47.773"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="21.633"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.333" Value="21.633"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.367" Value="-2.903"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="29.664"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.433" Value="-72.176"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.467" Value="-92.586"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="LeftRing">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.133" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.167" Value="0.954"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.233" Value="0.954"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.267" Value="0.94"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.94"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.333" Value="0.857"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.367" Value="0.918"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0.953"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.433" Value="1.004"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(SkewTransform.AngleY)" Storyboard.TargetName="LeftRing">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.233" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.267" Value="-10.013"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.367" Value="-10.013"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-2.099"/>
+            </DoubleAnimationUsingKeyFrames>
+
+        </Storyboard>
+        <Storyboard x:Key="RingAnimation2">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="RightRing">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.033" Value="-16.358"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.067" Value="-16.358"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-35.669"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.167" Value="-35.669"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-4.402"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.267" Value="-4.402"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-35.352"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.333" Value="-35.352"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.367" Value="-54.835"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-54.835"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.433" Value="-69.162"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.467" Value="-86.462"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-111.757"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="RightRing">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.033" Value="-0.606"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.067" Value="-4.116"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="5.634"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.133" Value="-2.378"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.167" Value="12.242"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1.742"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.233" Value="-0.903"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.267" Value="-4.561"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-4.561"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.333" Value="5.049"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.367" Value="1.472"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-0.174"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.433" Value="3.74"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.467" Value="4.304"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="RightRing">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.033" Value="1.76"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.067" Value="6.394"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="1.144"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.133" Value="10.088"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.167" Value="4.433"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-0.067"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.233" Value="-4.94"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.267" Value="-4.776"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-4.776"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.333" Value="-1.6"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.367" Value="-4.41"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-5.22"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.433" Value="-4.58"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.467" Value="-13.695"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(SkewTransform.AngleX)" Storyboard.TargetName="RightRing">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.033" Value="-3.741"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.067" Value="5.016"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="5.016"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.133" Value="2.401"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.233" Value="2.401"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.267" Value="-11.262"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-11.262"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.333" Value="-2.979"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-2.979"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.433" Value="10.24"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.467" Value="7.066"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="RightRing">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.067" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="1.056"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.133" Value="1.056"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.167" Value="0.934"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.367" Value="0.934"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0.887"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="RightRing">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.067" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.912"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.133" Value="1.026"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1.026"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.233" Value="0.866"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.866"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.333" Value="0.884"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.367" Value="0.91"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+
+
+
     </Window.Resources>
-    
-        
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource RingAnimation2}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <!--<Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.MouseEnter" SourceName="LeftRing">
+            
+        <BeginStoryboard Storyboard="{StaticResource RingAnimation}"/>
+        </EventTrigger>
+    </Window.Triggers>-->
+    <!--<Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource RingAnimation}"/>
+        </EventTrigger>
+    </Window.Triggers>-->
+
+
+
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource ="assets/RedBricks.jpeg" Stretch="UniformToFill"></ImageBrush>
@@ -43,7 +250,19 @@
                 <ImageBrush ImageSource="assets/Whiteboard.png" Stretch="UniformToFill"/>
             </Canvas.Background>
 
-            <Button x:Name="Molk" Canvas.Left="249" Canvas.Top="187" Width="203" Height="257" BorderBrush="{x:Null}" Click="openMolkPage" Style="{StaticResource ButtonStyle}" ToolTip="Zip files">
+            <Image x:Name="LeftRing" Height="354" Canvas.Left="136" Canvas.Top="153" Width="430" Source="assets/buttonHL.png" RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
+
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+
+            <Button x:Name="Molk" Canvas.Left="249" Canvas.Top="187" Width="203" Height="257" BorderBrush="{x:Null}" Click="openMolkPage" Style="{StaticResource ButtonStyle}" MouseEnter="leftRingMosueEnter" MouseLeave="leftRingMouseLeave">
                 <Button.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301">
                     </DropShadowEffect>
@@ -53,7 +272,21 @@
                 </Button.Background>
             </Button>
 
-            <Button x:Name="Unmolk" Canvas.Left="800" Canvas.Top="187" Width="218" Height="257" BorderBrush="{x:Null}" Click="openUnMolkPage" Style="{StaticResource ButtonStyle}" ToolTip="Unzip files">
+
+
+            <Image x:Name="RightRing" Height="354" Canvas.Left="692" Canvas.Top="153" Width="430" Source="assets/buttonHL.png" RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
+
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+
+            <Button x:Name="Unmolk" Canvas.Left="800" Canvas.Top="187" Width="218" Height="257" BorderBrush="{x:Null}" Click="openUnMolkPage" Style="{StaticResource ButtonStyle}" MouseEnter="rightRingMosueEnter" MouseLeave="rightRingMouseLeave" >
                 <Button.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
                 </Button.Effect>
