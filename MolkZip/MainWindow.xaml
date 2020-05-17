@@ -262,7 +262,7 @@
                 </Image.RenderTransform>
             </Image>
 
-            <Button x:Name="Molk" Canvas.Left="249" Canvas.Top="187" Width="203" Height="257" BorderBrush="{x:Null}" Click="openMolkPage" Style="{StaticResource ButtonStyle}" MouseEnter="leftRingMosueEnter" MouseLeave="leftRingMouseLeave">
+            <Button x:Name="Molk" Canvas.Left="249" Canvas.Top="187" Width="203" Height="257" BorderBrush="{x:Null}" Click="openMolkPage" Style="{StaticResource ButtonStyle}" MouseEnter="leftRingMosueEnter" MouseLeave="leftRingMouseLeave" ToolTip="Zip files">
                 <Button.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301">
                     </DropShadowEffect>
@@ -286,7 +286,7 @@
                 </Image.RenderTransform>
             </Image>
 
-            <Button x:Name="Unmolk" Canvas.Left="800" Canvas.Top="187" Width="218" Height="257" BorderBrush="{x:Null}" Click="openUnMolkPage" Style="{StaticResource ButtonStyle}" MouseEnter="rightRingMosueEnter" MouseLeave="rightRingMouseLeave" >
+            <Button x:Name="Unmolk" Canvas.Left="800" Canvas.Top="187" Width="218" Height="257" BorderBrush="{x:Null}" Click="openUnMolkPage" Style="{StaticResource ButtonStyle}" MouseEnter="rightRingMosueEnter" MouseLeave="rightRingMouseLeave" ToolTip="Unzip .molk file" >
                 <Button.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
                 </Button.Effect>
