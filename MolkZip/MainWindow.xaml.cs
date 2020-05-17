@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -21,11 +22,13 @@ namespace MolkZip
     public partial class MainWindow : Window
     {
         private object content;
+           
 
         public MainWindow()
         {
             InitializeComponent();
-            content = Content;         
+            content = Content;
+           
         }
 
         public void GoToHomePage()
@@ -45,6 +48,35 @@ namespace MolkZip
         {
             UnMolkPage unMolk = new UnMolkPage(this);
             this.Content = unMolk;
+        }
+
+       
+        private void leftRingMosueEnter(object sender, MouseEventArgs e)
+        {
+            
+            LeftRing.Visibility = Visibility.Visible;          
+            Storyboard story = (Storyboard)FindResource("RingAnimation");                    
+            LeftRing.BeginStoryboard(story);
+           
+                     
+        }
+
+        private void leftRingMouseLeave(object sender, MouseEventArgs e)
+        {
+            LeftRing.Visibility = Visibility.Hidden;
+        }
+
+        private void rightRingMosueEnter(object sender, MouseEventArgs e)
+        {
+            RightRing.Visibility = Visibility.Visible;
+            Storyboard story = (Storyboard)FindResource("RingAnimation2");
+            RightRing.BeginStoryboard(story);
+         
+        }
+
+        private void rightRingMouseLeave(object sender, MouseEventArgs e)
+        {
+            RightRing.Visibility = Visibility.Hidden;
         }
     }
 }
