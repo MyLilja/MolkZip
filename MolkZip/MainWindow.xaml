@@ -7,6 +7,28 @@
         mc:Ignorable="d"
         ResizeMode="NoResize"
         Title="MainWindow" Height="720" Width="1280">
+    
+    <Window.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    
         
     <Grid>
         <Grid.Background>
@@ -20,16 +42,18 @@
             <Canvas.Background>
                 <ImageBrush ImageSource="assets/Whiteboard.png" Stretch="UniformToFill"/>
             </Canvas.Background>
-            <Button x:Name="Molk" Canvas.Left="249" Canvas.Top="187" Width="203" Height="257" BorderBrush="{x:Null}" Click="openMolkPage">
+
+            <Button x:Name="Molk" Canvas.Left="249" Canvas.Top="187" Width="203" Height="257" BorderBrush="{x:Null}" Click="openMolkPage" Style="{StaticResource ButtonStyle}">
                 <Button.Effect>
-                    <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301">
+                    </DropShadowEffect>
                 </Button.Effect>
                 <Button.Background>
-
                     <ImageBrush ImageSource="assets/Zip2.png"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="Unmolk" Canvas.Left="800" Canvas.Top="187" Width="218" Height="257" BorderBrush="{x:Null}" Click="openUnMolkPage">
+
+            <Button x:Name="Unmolk" Canvas.Left="800" Canvas.Top="187" Width="218" Height="257" BorderBrush="{x:Null}" Click="openUnMolkPage" Style="{StaticResource ButtonStyle}">
                 <Button.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
                 </Button.Effect>
@@ -40,6 +64,5 @@
             </Button>
 
         </Canvas>
-
     </Grid>
 </Window>
