@@ -43,7 +43,7 @@
                 <ImageBrush ImageSource="assets/Whiteboard.png" Stretch="UniformToFill"/>
             </Canvas.Background>
 
-            <Button x:Name="Molk" Canvas.Left="249" Canvas.Top="187" Width="203" Height="257" BorderBrush="{x:Null}" Click="openMolkPage" Style="{StaticResource ButtonStyle}">
+            <Button x:Name="Molk" Canvas.Left="249" Canvas.Top="187" Width="203" Height="257" BorderBrush="{x:Null}" Click="openMolkPage" Style="{StaticResource ButtonStyle}" ToolTip="Zip files">
                 <Button.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301">
                     </DropShadowEffect>
@@ -53,7 +53,7 @@
                 </Button.Background>
             </Button>
 
-            <Button x:Name="Unmolk" Canvas.Left="800" Canvas.Top="187" Width="218" Height="257" BorderBrush="{x:Null}" Click="openUnMolkPage" Style="{StaticResource ButtonStyle}">
+            <Button x:Name="Unmolk" Canvas.Left="800" Canvas.Top="187" Width="218" Height="257" BorderBrush="{x:Null}" Click="openUnMolkPage" Style="{StaticResource ButtonStyle}" ToolTip="Unzip files">
                 <Button.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
                 </Button.Effect>

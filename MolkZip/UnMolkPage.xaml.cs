@@ -1,6 +1,8 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Forms;
+using TextBox = System.Windows.Controls.TextBox;
+using ToolTip = System.Windows.Controls.ToolTip;
 
 namespace MolkZip
 {
@@ -28,7 +30,8 @@ namespace MolkZip
             OpenFileDialog filepath = new OpenFileDialog();
             filepath.Filter = "Molk Files|*.molk";
             filepath.ShowDialog();
-            list_result.Items.Add($"{filepath.FileName}");
+            Path_Name.Text = filepath.FileName;
         }
+
     }
 }

@@ -41,12 +41,20 @@
             <Canvas.Background>
                 <ImageBrush ImageSource="assets/Whiteboard.png" Stretch="UniformToFill"/>
             </Canvas.Background>
-            <ListBox x:Name="list_result" Height="336" Canvas.Left="135" Canvas.Top="133" Width="420" SelectionMode="Multiple">
-                <ListBox.Effect>
+            <TextBox x:Name="Path_Name" Height="31" Canvas.Left="135" TextWrapping="Wrap" Canvas.Top="73" Width="327" ToolTip="Directory path">
+                <TextBox.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.3" Direction="301"/>
+                </TextBox.Effect>
+            </TextBox>
+            <Button x:Name="select_Folder" Canvas.Left="481" Canvas.Top="63" Width="54" Height="48" RenderTransformOrigin="0.52,0.704" BorderBrush="{x:Null}" Style="{StaticResource ButtonStyle}" Click="GetPath" ToolTip="Open file selection">
+                <Button.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
-                </ListBox.Effect>
-            </ListBox>
-            <Button x:Name="goBack" Canvas.Left="260" Canvas.Top="490" Width="141" Height="64" BorderBrush="{x:Null}" Click="previousPage_Click" Style="{StaticResource ButtonStyle}">
+                </Button.Effect>
+                <Button.Background>
+                    <ImageBrush ImageSource="assets/Folder2.png"></ImageBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="goBack" Canvas.Left="260" Canvas.Top="490" Width="141" Height="64" BorderBrush="{x:Null}" Click="previousPage_Click" Style="{StaticResource ButtonStyle}" ToolTip="Back to main menu">
                 <Button.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.6" Direction="301"/>
                 </Button.Effect>
@@ -56,7 +64,7 @@
 
 
             </Button>
-            <Button x:Name="unZip" Canvas.Left="908" Canvas.Top="472" Width="90" Height="106" Style="{StaticResource ButtonStyle}" Click="GetPath">
+            <Button x:Name="unZip" Canvas.Left="908" Canvas.Top="472" Width="90" Height="106" Style="{StaticResource ButtonStyle}" ToolTip="Click to Zip the files!">
                 <Button.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
                 </Button.Effect>
