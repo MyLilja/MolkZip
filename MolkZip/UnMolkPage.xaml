@@ -8,6 +8,27 @@
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="UnMolkPage">
 
+    <Page.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource ="assets/RedBricks.jpeg" Stretch="UniformToFill"></ImageBrush>
@@ -20,15 +41,25 @@
             <Canvas.Background>
                 <ImageBrush ImageSource="assets/Whiteboard.png" Stretch="UniformToFill"/>
             </Canvas.Background>
-            <Button x:Name="goBack" Canvas.Left="260" Canvas.Top="490" Width="141" Height="64" BorderBrush="{x:Null}" Click="previousPage_Click">
+            <Button x:Name="goBack" Canvas.Left="260" Canvas.Top="490" Width="141" Height="64" BorderBrush="{x:Null}" Click="previousPage_Click" Style="{StaticResource ButtonStyle}">
                 <Button.Effect>
-                    <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.6" Direction="301"/>
                 </Button.Effect>
                 <Button.Background>
                     <ImageBrush ImageSource="assets/RedArrowLeft.png"></ImageBrush>
                 </Button.Background>
+
+
+            </Button>
+            <Button x:Name="unZip" Canvas.Left="908" Canvas.Top="472" Width="90" Height="106" Style="{StaticResource ButtonStyle}">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
+                </Button.Effect>
+                <Button.Background>
+                    <ImageBrush ImageSource="assets/UnzipFile.png"></ImageBrush>
+                </Button.Background>
             </Button>
         </Canvas>
-        
+
     </Grid>
 </Page>
