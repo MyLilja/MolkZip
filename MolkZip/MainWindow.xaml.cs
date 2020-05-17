@@ -20,37 +20,31 @@ namespace MolkZip
     /// </summary>
     public partial class MainWindow : Window
     {
+        private object content;
+
         public MainWindow()
         {
             InitializeComponent();
+            content = Content;         
+        }
 
-            //// Create an Image element.
-            //Image croppedImage = new Image();
-            //croppedImage.Width = 1280;
-            //croppedImage.Margin = new Thickness(5);
+        public void GoToHomePage()
+        {
+            Content = content;
+        }
 
-            //// Create a CroppedBitmap based off of a xaml defined resource.
-            //CroppedBitmap cb = new CroppedBitmap(
-            //   (BitmapSource)this.Resources["RedBrick"],
-            //   new Int32Rect(0, 0, 720, 1280));       //select region rect
-            //croppedImage.Source = cb;                 //set image source to cropped
+        private void openMolkPage(object sender, RoutedEventArgs e)
+        {
+            MolkPage molk = new MolkPage(this);
+            this.Content = molk;
         }
 
        
 
-        private void OpenMolkWindow(object sender, RoutedEventArgs e)
+        private void openUnMolkPage(object sender, RoutedEventArgs e)
         {
-            MolkWindow molk= new MolkWindow();
-            molk.Show();
-            this.Close();
-            
-        }
-
-        private void OpenUnmolkWindow(object sender, RoutedEventArgs e)
-        {
-            UnmolkWindow unMolk = new UnmolkWindow();       
-            unMolk.Show();
-            this.Close();
+            UnMolkPage unMolk = new UnMolkPage(this);
+            this.Content = unMolk;
         }
     }
 }
