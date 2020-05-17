@@ -10,25 +10,28 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace MolkZip
 {
     /// <summary>
-    /// Interaction logic for UnmolkWindow.xaml
+    /// Interaction logic for UnMolkPage.xaml
     /// </summary>
-    public partial class UnmolkWindow : Window
+    public partial class UnMolkPage : Page
     {
-        public UnmolkWindow()
+        private MainWindow mainWindow;
+
+        public UnMolkPage(MainWindow mainWindow)
         {
             InitializeComponent();
+            this.mainWindow = mainWindow;
         }
 
-        private void _previousPage(object sender, RoutedEventArgs e)
+
+        private void previousPage_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow homePage = new MainWindow();
-            homePage.Show();
-            this.Close();
+            mainWindow.GoToHomePage();
         }
     }
 }

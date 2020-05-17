@@ -1,18 +1,7 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using WinForms = System.Windows.Forms;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 using System.Diagnostics;
 using System.IO;
@@ -22,30 +11,25 @@ using Path = System.IO.Path;
 namespace MolkZip
 {
     /// <summary>
-    /// Interaction logic for MolkWindow.xaml
+    /// Interaction logic for MolkPage.xaml
     /// </summary>
-    public partial class MolkWindow : Window
+    public partial class MolkPage : Page
     {
-        
+        private MainWindow mainWindow;
 
-        public MolkWindow()
+        public MolkPage(MainWindow mainWindow)
         {
             InitializeComponent();
-            
+            this.mainWindow = mainWindow;
         }
 
-        private void selectFolder(object sender, RoutedEventArgs e)
-        {
 
+        private void browseFolder(object sender, RoutedEventArgs e)
+        {
             FolderBrowserDialog folderDialog = new FolderBrowserDialog();
             folderDialog.ShowNewFolderButton = false;
             folderDialog.SelectedPath = System.AppDomain.CurrentDomain.BaseDirectory;
             DialogResult result = folderDialog.ShowDialog();
-
-            //WinForms.FolderBrowserDialog folderDialog = new WinForms.FolderBrowserDialog();
-            //folderDialog.ShowNewFolderButton = false;
-            //folderDialog.SelectedPath = System.AppDomain.CurrentDomain.BaseDirectory;
-            //WinForms.DialogResult result = folderDialog.ShowDialog();
 
             if (result == WinForms.DialogResult.OK)
             {
@@ -67,6 +51,7 @@ namespace MolkZip
                         Debug.WriteLine("#Debug: File: " + fileInfo.Name + " Date:" + sDate);
                     }
                 }
+
                 listFiles.Items.Clear();
 
                 string[] files = Directory.GetFiles(folderDialog.SelectedPath);
@@ -82,14 +67,12 @@ namespace MolkZip
                 }
 
             }
-
         }
 
-        private void previousPage(object sender, RoutedEventArgs e)
+        private void homePage(object sender, RoutedEventArgs e)
         {
-            MainWindow homePage = new MainWindow();
-            homePage.Show();
-            this.Close();
+            mainWindow.GoToHomePage();
         }
+        
     }
 }
