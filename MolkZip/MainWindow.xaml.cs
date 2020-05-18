@@ -78,5 +78,21 @@ namespace MolkZip
         {
             RightRing.Visibility = Visibility.Hidden;
         }
+        bool hidden = true;
+        private void menu_show(object sender, RoutedEventArgs e)
+        {
+            hidden = !hidden;
+            if (hidden == true)
+            {
+                molk_text.Opacity = 0;
+                Unmolk_text.Opacity = 0;
+            }
+            else
+            {
+                molk_text.Opacity = 1;
+                Unmolk_text.Opacity = 1;
+            }
+
+        }
     }
 }

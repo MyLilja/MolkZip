@@ -73,6 +73,24 @@ namespace MolkZip
         {
             mainWindow.GoToHomePage();
         }
-        
+        bool hidden = true;
+        private void molk_show(object sender, RoutedEventArgs e)
+        {
+            hidden = !hidden;
+            if (hidden == true)
+            {
+                molk_Text.Opacity = 0;
+                Browse_Text.Opacity = 0;
+                Arrow_Text.Opacity = 0;
+            }
+            else
+            {
+                molk_Text.Opacity = 1;
+                Browse_Text.Opacity = 1;
+                Arrow_Text.Opacity = 1;
+            }
+
+        }
+
     }
 }

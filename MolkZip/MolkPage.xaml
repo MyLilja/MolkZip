@@ -62,6 +62,12 @@
                 </ListBox.Effect>
             </ListBox>
 
+            <!--The button and labels for text -->
+            <Button Content="Button" Canvas.Left="175" Canvas.Top="606" Width="98" Click="molk_show" Visibility="Visible" Opacity="0" Cursor="Hand"/>
+            <Label x:Name="Arrow_Text" Content="Back" Canvas.Left="304" Canvas.Top="576" Width="74" Height="43" FontFamily="Showcard Gothic" FontSize="24" Opacity="0"/>
+            <Label x:Name="molk_Text" Content="Molk the files" Canvas.Left="817" Canvas.Top="589" Width="232" Height="43" FontFamily="Showcard Gothic" FontSize="24" Opacity="0"/>
+            <Label x:Name="Browse_Text" Content="Browse files" Canvas.Left="540" Canvas.Top="68" Width="175" Height="43" FontFamily="Showcard Gothic" FontSize="24" Opacity="0"/>
+
             <Button x:Name="goBack" Canvas.Left="258" Canvas.Top="512" Width="141" Height="64" BorderBrush="{x:Null}" Click="homePage" Style="{StaticResource ButtonStyle}" ToolTip="Back to main menu!">
                 <Button.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.6" Direction="301"/>

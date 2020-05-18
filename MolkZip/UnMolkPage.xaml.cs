@@ -32,6 +32,23 @@ namespace MolkZip
             filepath.ShowDialog();
             Path_Name.Text = filepath.FileName;
         }
+        bool hidden = true;
+        private void Unmolk_show(object sender, RoutedEventArgs e)
+        {
+            hidden = !hidden;
+            if(hidden == true)
+            {
+                Unmolk_Text.Opacity = 0;
+                Browse_Text.Opacity = 0;
+                Arrow_Text.Opacity = 0;
+            }
+            else
+            {
+                Unmolk_Text.Opacity = 1;
+                Browse_Text.Opacity = 1;
+                Arrow_Text.Opacity = 1;
+            }
 
+        }
     }
 }
