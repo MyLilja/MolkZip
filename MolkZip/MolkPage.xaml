@@ -71,7 +71,7 @@
                 </Button.Background>
             </Button>
 
-            <Button x:Name="zipFiles" Canvas.Left="849" Canvas.Top="488" Width="120" Height="106" BorderBrush="{x:Null}" Style="{StaticResource ButtonStyle}" ToolTip="Compress the files to .molk">
+            <Button x:Name="zipFiles" Canvas.Left="849" Canvas.Top="488" Width="120" Height="106" BorderBrush="{x:Null}" Style="{StaticResource ButtonStyle}" ToolTip="Molk the files">
                 <Button.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
                 </Button.Effect>

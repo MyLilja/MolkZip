@@ -64,7 +64,7 @@
 
 
             </Button>
-            <Button x:Name="unZip" Canvas.Left="908" Canvas.Top="472" Width="90" Height="106" Style="{StaticResource ButtonStyle}" ToolTip="Click to Zip the files!">
+            <Button x:Name="unZip" Canvas.Left="908" Canvas.Top="472" Width="90" Height="106" Style="{StaticResource ButtonStyle}" ToolTip="Click to molk the files!">
                 <Button.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
                 </Button.Effect>
