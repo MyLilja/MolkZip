@@ -31,7 +31,7 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource ="assets/RedBricks.jpeg" Stretch="UniformToFill"></ImageBrush>
+            <ImageBrush ImageSource ="assets/RedBricks2.jpeg" Stretch="UniformToFill"></ImageBrush>
         </Grid.Background>
 
         <Canvas>
@@ -71,12 +71,12 @@
                 </Button.Background>
             </Button>
 
-            <Button x:Name="zipFiles" Canvas.Left="849" Canvas.Top="488" Width="120" Height="106" BorderBrush="{x:Null}" Style="{StaticResource ButtonStyle}" ToolTip="Molk the files">
+            <Button x:Name="zipFiles" Canvas.Left="845" Canvas.Top="476" Width="171" Height="120" BorderBrush="{x:Null}" Style="{StaticResource ButtonStyle}" ToolTip="Molk the files">
                 <Button.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
                 </Button.Effect>
                 <Button.Background>
-                    <ImageBrush ImageSource="assets/ZipFiles.png"></ImageBrush>
+                    <ImageBrush ImageSource="assets/MolkZip.png"></ImageBrush>
                 </Button.Background>
             </Button>
         </Canvas>

@@ -111,14 +111,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="assets\RedBricks.jpeg" />
-    <Resource Include="assets\Whiteboard.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="assets\Whiteboard.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="assets\Zip.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="assets\Unzip.png" />
@@ -143,9 +136,6 @@
     <Resource Include="assets\RedArrowLeft.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="assets\ZipFiles.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="assets\Folder.png" />
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +146,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="assets\buttonHL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\MolkZip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\UnmolkZip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\RedBricks2.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
