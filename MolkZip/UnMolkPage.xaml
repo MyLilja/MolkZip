@@ -31,7 +31,7 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource ="assets/RedBricks.jpeg" Stretch="UniformToFill"></ImageBrush>
+            <ImageBrush ImageSource ="assets/RedBricks2.jpeg" Stretch="UniformToFill"></ImageBrush>
         </Grid.Background>
 
         <Canvas>
@@ -64,12 +64,12 @@
 
 
             </Button>
-            <Button x:Name="unZip" Canvas.Left="908" Canvas.Top="472" Width="90" Height="106" Style="{StaticResource ButtonStyle}" ToolTip="Click to molk the files!">
+            <Button x:Name="unZip" Canvas.Left="863" Canvas.Top="468" Width="145" Height="124" Style="{StaticResource ButtonStyle}" ToolTip="unMolk the files" RenderTransformOrigin="0.5,0.5">
                 <Button.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
                 </Button.Effect>
                 <Button.Background>
-                    <ImageBrush ImageSource="assets/UnzipFile.png"></ImageBrush>
+                    <ImageBrush ImageSource="assets/UnmolkZip.png"></ImageBrush>
                 </Button.Background>
             </Button>
 
