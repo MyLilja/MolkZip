@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using WinForms = System.Windows.Forms;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
@@ -28,6 +29,8 @@ namespace MolkZip
             }
         }
 
+
+        public Dictionary<string, string> items = new Dictionary<string, string>();
         private void browseFolder(object sender, RoutedEventArgs e)
         {
             FolderBrowserDialog folderDialog = new FolderBrowserDialog();
@@ -96,5 +99,69 @@ namespace MolkZip
 
         }
 
+        // Loopar genom allt i listan och om den redan finns så skippar den att lägga till den
+        private void select_files(object sender, RoutedEventArgs e)
+        {
+             foreach(string item in listFiles.SelectedItems)
+             {
+                for (int i = 0; i < Choosen_files.Items.Count+1; i++)
+                {
+                    if (!Choosen_files.Items.Contains(item))
+                    {
+                        Choosen_files.Items.Add(item);
+                        items.Add(item, folderName.Text + "\\" + item);
+                    }
+                }
+             }
+        }
+
+        private void Molk(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog target = new SaveFileDialog();
+            target.Filter = "Molk|*.molk";
+            target.Title = "Save Molk file";
+            target.ShowDialog();
+
+            Process proc = new Process();
+
+            proc.StartInfo.FileName = "cmd.exe";
+            proc.StartInfo.RedirectStandardInput = true;
+            proc.StartInfo.RedirectStandardOutput = true;
+            proc.StartInfo.RedirectStandardError = true;
+            proc.StartInfo.CreateNoWindow = true;
+            proc.StartInfo.UseShellExecute = false;
+
+            string command = "molk -j " + target.FileName + " ";
+            foreach(KeyValuePair<string, string> entry in items)
+            {
+                command += '"' + entry.Value + '"' + " ";
+            }
+            bool once = true;
+            while (once)
+            {
+
+                proc.Start();
+                proc.StandardInput.WriteLine($"{command}");
+                proc.StandardInput.Flush();
+                proc.StandardInput.Close();
+
+                proc.WaitForExit();
+                once = false;
+            }
+        }
+
+        private void remove_files(object sender, RoutedEventArgs e)
+        {
+            List<string> files = new List<string>();
+            foreach (string item in Choosen_files.SelectedItems)
+            {
+                files.Add(item);
+            }
+            for (int i = 0; i < Choosen_files.SelectedItems.Count+1; i++)
+            {
+                items.Remove(files[i]);
+                Choosen_files.Items.Remove(files[i]);
+            }
+        }
     }
 }
