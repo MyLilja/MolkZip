@@ -156,5 +156,12 @@
   <ItemGroup>
     <Resource Include="assets\RedBricks2.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\UnmolkPage.png" />
+    <Resource Include="assets\MolkPage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\MolkLogo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
