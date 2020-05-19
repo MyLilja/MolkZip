@@ -27,8 +27,12 @@ namespace MolkZip
         public MainWindow()
         {
             InitializeComponent();
+            if (Properties.Settings.Default.hidden == false)
+            {
+                molk_text.Opacity = 1;
+                Unmolk_text.Opacity = 1;
+            }
             content = Content;
-           
         }
 
         public void GoToHomePage()
@@ -78,11 +82,10 @@ namespace MolkZip
         {
             RightRing.Visibility = Visibility.Hidden;
         }
-        bool hidden = true;
         private void menu_show(object sender, RoutedEventArgs e)
         {
-            hidden = !hidden;
-            if (hidden == true)
+            Properties.Settings.Default.hidden = !Properties.Settings.Default.hidden;
+            if (Properties.Settings.Default.hidden == true)
             {
                 molk_text.Opacity = 0;
                 Unmolk_text.Opacity = 0;

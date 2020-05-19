@@ -17,6 +17,12 @@ namespace MolkZip
         {
             InitializeComponent();
             this.mainWindow = mainWindow;
+            if (Properties.Settings.Default.hidden == false)
+            {
+                Unmolk_Text.Opacity = 1;
+                Browse_Text.Opacity = 1;
+                Arrow_Text.Opacity = 1;
+            }
         }
 
 
@@ -32,11 +38,10 @@ namespace MolkZip
             filepath.ShowDialog();
             Path_Name.Text = filepath.FileName;
         }
-        bool hidden = true;
         private void Unmolk_show(object sender, RoutedEventArgs e)
         {
-            hidden = !hidden;
-            if(hidden == true)
+            Properties.Settings.Default.hidden = !Properties.Settings.Default.hidden;
+            if(Properties.Settings.Default.hidden == true)
             {
                 Unmolk_Text.Opacity = 0;
                 Browse_Text.Opacity = 0;
