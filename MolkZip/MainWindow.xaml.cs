@@ -82,6 +82,18 @@ namespace MolkZip
         {
             RightRing.Visibility = Visibility.Hidden;
         }
+
+
+        private void exitApp(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+        }
+
+        private void exitMouseEnter(object sender, MouseEventArgs e)
+        {
+            Storyboard story = (Storyboard)FindResource("ExitButton");
+            Exit.BeginStoryboard(story);
+
         private void menu_show(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.hidden = !Properties.Settings.Default.hidden;
@@ -95,6 +107,7 @@ namespace MolkZip
                 molk_text.Opacity = 1;
                 Unmolk_text.Opacity = 1;
             }
+
 
         }
     }

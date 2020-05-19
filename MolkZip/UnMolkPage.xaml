@@ -27,20 +27,35 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        
+        <Storyboard x:Key="ExitButton3">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="Exit3">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.05" Value="-6.651"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-0.877"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.15" Value="5.521"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-1.033"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.25" Value="-6.496"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-0.539"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
     </Page.Resources>
+    
+    
 
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource ="assets/RedBricks2.jpeg" Stretch="UniformToFill"></ImageBrush>
         </Grid.Background>
 
-        <Canvas>
+        <Canvas Margin="-33,0" >
             <Canvas.Effect>
                 <DropShadowEffect Color="#FF211D1D" BlurRadius="40" ShadowDepth="30" Opacity="0.85" Direction="301" />
             </Canvas.Effect>
             <Canvas.Background>
                 <ImageBrush ImageSource="assets/Whiteboard.png" Stretch="UniformToFill"/>
             </Canvas.Background>
+
             <TextBox x:Name="Path_Name" Height="31" Canvas.Left="135" TextWrapping="Wrap" Canvas.Top="73" Width="327" ToolTip="Directory path">
                 <TextBox.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.3" Direction="301"/>
@@ -51,19 +66,20 @@
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
                 </Button.Effect>
                 <Button.Background>
-                    <ImageBrush ImageSource="assets/Folder2.png"></ImageBrush>
+                    <ImageBrush ImageSource="assets/Folder.png"></ImageBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="goBack" Canvas.Left="260" Canvas.Top="490" Width="141" Height="64" BorderBrush="{x:Null}" Click="previousPage_Click" Style="{StaticResource ButtonStyle}" ToolTip="Back to main menu">
+            <Button x:Name="goBack" Canvas.Left="234" Canvas.Top="496" Width="183" Height="78" BorderBrush="{x:Null}" Click="previousPage_Click" Style="{StaticResource ButtonStyle}" ToolTip="Back to main menu">
                 <Button.Effect>
-                    <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.6" Direction="301"/>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
                 </Button.Effect>
                 <Button.Background>
-                    <ImageBrush ImageSource="assets/RedArrowLeft.png"></ImageBrush>
+                    <ImageBrush ImageSource="assets/Arrow.png"></ImageBrush>
                 </Button.Background>
 
 
             </Button>
+
             <Button x:Name="unZip" Canvas.Left="863" Canvas.Top="468" Width="145" Height="124" Style="{StaticResource ButtonStyle}" ToolTip="unMolk the files" RenderTransformOrigin="0.5,0.5">
                 <Button.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
@@ -73,6 +89,7 @@
                 </Button.Background>
             </Button>
 
+
             <!--The button and labels for text -->
             <Button Content="Button" Canvas.Left="175" Canvas.Top="606" Width="98" Click="Unmolk_show" Visibility="Visible" Opacity="0" Cursor="Hand"/>
             <Label x:Name="Arrow_Text" Content="Back" Canvas.Left="296" Canvas.Top="559" Width="74" Height="43" FontFamily="Kristen ITC" FontSize="24" Opacity="0" FontWeight="Bold"/>
@@ -80,5 +97,24 @@
             <Label x:Name="Browse_Text" Content="Browse files" Canvas.Left="540" Canvas.Top="68" Width="175" Height="43" FontFamily="Kristen ITC" FontSize="24" Opacity="0" FontWeight="Bold"/>
         </Canvas>
 
+
+            <Button x:Name="Exit3"  Canvas.Left="1158" Canvas.Top="29" Width="58" Height="84" BorderBrush="{x:Null}" Style="{StaticResource ButtonStyle}" Click="exitApp3" RenderTransformOrigin="0.5,0.5" MouseEnter="exitMouseEnter3">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
+                </Button.Effect>
+                <Button.Background>
+                    <ImageBrush ImageSource="assets/Exit.png"/>
+                </Button.Background>
+            </Button>
+
+        </Canvas>
     </Grid>
 </Page>

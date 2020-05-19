@@ -27,14 +27,29 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Storyboard x:Key="ExitButton2">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="Exit2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.05" Value="-6.403"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-0.456"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.15" Value="5.725"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-0.115"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.25" Value="-5.554"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-0.031"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+
+
     </Page.Resources>
+   
 
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource ="assets/RedBricks2.jpeg" Stretch="UniformToFill"></ImageBrush>
         </Grid.Background>
 
-        <Canvas>
+        <Canvas Margin="-33,0" >
             <Canvas.Effect>
                 <DropShadowEffect Color="#FF211D1D" BlurRadius="40" ShadowDepth="30" Opacity="0.85" Direction="301" />
             </Canvas.Effect>
@@ -53,7 +68,7 @@
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
                 </Button.Effect>
                 <Button.Background>
-                    <ImageBrush ImageSource="assets/Folder2.png"></ImageBrush>
+                    <ImageBrush ImageSource="assets/Folder.png"></ImageBrush>
                 </Button.Background>
             </Button>
             <ListBox x:Name="listFiles" Height="336" Canvas.Left="135" Canvas.Top="133" Width="420" SelectionMode="Multiple">
@@ -61,6 +76,7 @@
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
                 </ListBox.Effect>
             </ListBox>
+
 
             <!--The button and labels for text -->
             <Button Content="Button" Canvas.Left="175" Canvas.Top="606" Width="98" Click="molk_show" Visibility="Visible" Opacity="0" Cursor="Hand"/>
@@ -73,7 +89,7 @@
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.6" Direction="301"/>
                 </Button.Effect>
                 <Button.Background>
-                    <ImageBrush ImageSource="assets/RedArrowLeft.png"></ImageBrush>
+                    <ImageBrush ImageSource="assets/Arrow.png"></ImageBrush>
                 </Button.Background>
             </Button>
 
@@ -85,6 +101,26 @@
                     <ImageBrush ImageSource="assets/MolkZip.png"></ImageBrush>
                 </Button.Background>
             </Button>
+
+
+            <Button x:Name="Exit2"  Canvas.Left="1158" Canvas.Top="29" Width="58" Height="84" BorderBrush="{x:Null}" Style="{StaticResource ButtonStyle}" Click="exitApp2" MouseEnter="exitMouseEnter2" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
+                </Button.Effect>
+                <Button.Background>
+                    <ImageBrush ImageSource="assets/Exit.png"/>
+                </Button.Background>
+            </Button>
+
+
             <ListBox x:Name="Choosen_files" Height="336" Canvas.Left="720" Canvas.Top="133" Width="420" SelectionMode="Multiple">
                 <ListBox.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
@@ -92,6 +128,7 @@
             </ListBox>
             <Button x:Name="Add_button" Content="Add" Canvas.Left="603" Canvas.Top="278" Width="75" Click="select_files"/>
             <Button x:Name="remove_button" Content="Remove" Canvas.Left="603" Canvas.Top="334" Width="75" Click="remove_files"/>
+
         </Canvas>
 
     </Grid>
