@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using WinForms = System.Windows.Forms;
-
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
@@ -23,7 +23,7 @@ namespace MolkZip
             this.mainWindow = mainWindow;
         }
 
-
+        public Dictionary<string, string> items = new Dictionary<string, string>();
         private void browseFolder(object sender, RoutedEventArgs e)
         {
             FolderBrowserDialog folderDialog = new FolderBrowserDialog();
@@ -60,10 +60,12 @@ namespace MolkZip
                 foreach (string file in files)
                 {
                     listFiles.Items.Add(Path.GetFileName(file));
+                    items.Add(Path.GetFileName(file), Path.GetFullPath(file));
                 }
                 foreach (string dir in _directory)
                 {
                     listFiles.Items.Add(Path.GetFileName(dir));
+                    items.Add(Path.GetFileName(dir), Path.GetFullPath(dir));
                 }
 
             }
@@ -102,7 +104,8 @@ namespace MolkZip
                     {
                         Choosen_files.Items.Add(item);
                     }
-                }          
+                }
+                Add_button.Content = items[item];
              }
         }
     }

@@ -90,7 +90,7 @@
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
                 </ListBox.Effect>
             </ListBox>
-            <Button Content="Button" Canvas.Left="603" Canvas.Top="278" Width="75" Click="select_files"/>
+            <Button x:Name="Add_button" Content="Button" Canvas.Left="603" Canvas.Top="278" Width="75" Click="select_files"/>
         </Canvas>
 
     </Grid>
