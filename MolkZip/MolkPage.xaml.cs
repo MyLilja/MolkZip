@@ -92,5 +92,18 @@ namespace MolkZip
 
         }
 
+        private void select_files(object sender, RoutedEventArgs e)
+        {
+             foreach(string item in listFiles.SelectedItems)
+             {
+                for (int i = 0; i < Choosen_files.Items.Count+1; i++)
+                {
+                    if (!Choosen_files.Items.Contains(item))
+                    {
+                        Choosen_files.Items.Add(item);
+                    }
+                }          
+             }
+        }
     }
 }
