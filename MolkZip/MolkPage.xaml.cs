@@ -94,6 +94,7 @@ namespace MolkZip
 
         }
 
+        // Loopar genom allt i listan och om den redan finns så skippar den att lägga till den
         private void select_files(object sender, RoutedEventArgs e)
         {
              foreach(string item in listFiles.SelectedItems)
@@ -105,8 +106,30 @@ namespace MolkZip
                         Choosen_files.Items.Add(item);
                     }
                 }
-                Add_button.Content = items[item];
              }
+        }
+
+        private void Molk(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog target = new SaveFileDialog();
+            target.Filter = "Molk|*.molk";
+            target.Title = "Save Molk file";
+            target.ShowDialog();
+        }
+
+        private void remove_files(object sender, RoutedEventArgs e)
+        {
+            List<string> files = new List<string>();
+            foreach (string item in Choosen_files.SelectedItems)
+            {
+                files.Add(item);
+            }
+
+            for (int i = 0; i < Choosen_files.SelectedItems.Count+1; i++)
+            {
+                items.Remove(files[i]);
+                Choosen_files.Items.Remove(files[i]);
+            }
         }
     }
 }

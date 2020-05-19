@@ -77,7 +77,7 @@
                 </Button.Background>
             </Button>
 
-            <Button x:Name="zipFiles" Canvas.Left="849" Canvas.Top="488" Width="120" Height="106" BorderBrush="{x:Null}" Style="{StaticResource ButtonStyle}" ToolTip="Molk the files">
+            <Button x:Name="zipFiles" Canvas.Left="849" Canvas.Top="488" Width="120" Height="106" BorderBrush="{x:Null}" Style="{StaticResource ButtonStyle}" ToolTip="Molk the files" Click="Molk">
                 <Button.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
                 </Button.Effect>
@@ -90,7 +90,8 @@
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
                 </ListBox.Effect>
             </ListBox>
-            <Button x:Name="Add_button" Content="Button" Canvas.Left="603" Canvas.Top="278" Width="75" Click="select_files"/>
+            <Button x:Name="Add_button" Content="Add" Canvas.Left="603" Canvas.Top="278" Width="75" Click="select_files"/>
+            <Button x:Name="remove_button" Content="Remove" Canvas.Left="603" Canvas.Top="334" Width="75" Click="remove_files"/>
         </Canvas>
 
     </Grid>
