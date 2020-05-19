@@ -20,9 +20,10 @@ namespace MolkZip
             this.mainWindow = mainWindow;
             if (Properties.Settings.Default.hidden == false)
             {
-                Unmolk_Text.Opacity = 1;
-                Browse_Text.Opacity = 1;
-                Arrow_Text.Opacity = 1;
+                unmolkText.Opacity = 1;
+                browseText.Opacity = 1;
+                arrowText.Opacity = 1;
+                exitText.Opacity = 1;
             }
         }
 
@@ -42,19 +43,22 @@ namespace MolkZip
         private void Unmolk_show(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.hidden = !Properties.Settings.Default.hidden;
-            if(Properties.Settings.Default.hidden == true)
+            if (Properties.Settings.Default.hidden == true)
             {
-                Unmolk_Text.Opacity = 0;
-                Browse_Text.Opacity = 0;
-                Arrow_Text.Opacity = 0;
+                unmolkText.Opacity = 0;
+                browseText.Opacity = 0;
+                arrowText.Opacity = 0;
+                exitText.Opacity = 0;
             }
             else
             {
-                Unmolk_Text.Opacity = 1;
-                Browse_Text.Opacity = 1;
-                Arrow_Text.Opacity = 1;
+                unmolkText.Opacity = 1;
+                browseText.Opacity = 1;
+                arrowText.Opacity = 1;
+                exitText.Opacity = 1;
             }
 
+        }
 
         private void exitApp3(object sender, RoutedEventArgs e)
         {

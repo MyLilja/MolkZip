@@ -8,6 +8,7 @@ using System.IO;
 using System.Windows.Forms;
 using Path = System.IO.Path;
 using System.Windows.Media.Animation;
+using MessageBox = System.Windows.MessageBox;
 
 namespace MolkZip
 {
@@ -24,14 +25,18 @@ namespace MolkZip
             this.mainWindow = mainWindow;
             if (Properties.Settings.Default.hidden == false)
             {
-                molk_Text.Opacity = 1;
-                Browse_Text.Opacity = 1;
-                Arrow_Text.Opacity = 1;
+                molkText.Opacity = 1;
+                browseText.Opacity = 1;
+                arrowText.Opacity = 1;
+                exitText.Opacity = 1;
+                addFiles.Opacity = 1;
+                removeFiles.Opacity = 1;
             }
         }
 
 
         public Dictionary<string, string> items = new Dictionary<string, string>();
+
         private void browseFolder(object sender, RoutedEventArgs e)
         {
             FolderBrowserDialog folderDialog = new FolderBrowserDialog();
@@ -92,24 +97,9 @@ namespace MolkZip
         {
             Storyboard story = (Storyboard)FindResource("ExitButton2");
             Exit2.BeginStoryboard(story);
-
-        private void molk_show(object sender, RoutedEventArgs e)
-        {
-            Properties.Settings.Default.hidden = !Properties.Settings.Default.hidden;
-            if (Properties.Settings.Default.hidden == true)
-            {
-                molk_Text.Opacity = 0;
-                Browse_Text.Opacity = 0;
-                Arrow_Text.Opacity = 0;
-            }
-            else
-            {
-                molk_Text.Opacity = 1;
-                Browse_Text.Opacity = 1;
-                Arrow_Text.Opacity = 1;
-            }
-
         }
+
+        
 
         // Loopar genom allt i listan och om den redan finns så skippar den att lägga till den
         private void select_files(object sender, RoutedEventArgs e)
@@ -127,7 +117,7 @@ namespace MolkZip
              }
         }
 
-        private void Molk(object sender, RoutedEventArgs e)
+        private void molkFiles(object sender, RoutedEventArgs e)
         {
             SaveFileDialog target = new SaveFileDialog();
             target.Filter = "Molk|*.molk";
@@ -165,16 +155,46 @@ namespace MolkZip
         private void remove_files(object sender, RoutedEventArgs e)
         {
             List<string> files = new List<string>();
-            foreach (string item in Choosen_files.SelectedItems)
-            {
-                files.Add(item);
-            }
-            for (int i = 0; i < Choosen_files.SelectedItems.Count+1; i++)
-            {
-                items.Remove(files[i]);
-                Choosen_files.Items.Remove(files[i]);
-            }
+            try 
+            { 
+                foreach (string item in Choosen_files.SelectedItems)
+                {
+                    files.Add(item);
+                }
 
+                for (int i = 0; i < Choosen_files.SelectedItems.Count+1; i++)
+                {
+                    items.Remove(files[i]);
+                    Choosen_files.Items.Remove(files[i]);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Invalid Operation. " +ex.Message, "No files to remove from this list.",  MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void showMolk(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.hidden = !Properties.Settings.Default.hidden;
+            if (Properties.Settings.Default.hidden == true)
+            {
+                molkText.Opacity = 0;
+                browseText.Opacity = 0;
+                arrowText.Opacity = 0;
+                exitText.Opacity = 0;
+                addFiles.Opacity = 0;
+                removeFiles.Opacity = 0;
+            }
+            else
+            {
+                molkText.Opacity = 1;
+                browseText.Opacity = 1;
+                arrowText.Opacity = 1;
+                exitText.Opacity = 1;
+                addFiles.Opacity = 1;
+                removeFiles.Opacity = 1;
+            }
         }
     }
 }

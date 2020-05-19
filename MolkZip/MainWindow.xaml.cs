@@ -22,15 +22,15 @@ namespace MolkZip
     public partial class MainWindow : Window
     {
         private object content;
-           
+
 
         public MainWindow()
         {
             InitializeComponent();
             if (Properties.Settings.Default.hidden == false)
             {
-                molk_text.Opacity = 1;
-                Unmolk_text.Opacity = 1;
+                molkText.Opacity = 1;
+                unmolkText.Opacity = 1;
             }
             content = Content;
         }
@@ -46,7 +46,7 @@ namespace MolkZip
             this.Content = molk;
         }
 
-       
+
 
         private void openUnMolkPage(object sender, RoutedEventArgs e)
         {
@@ -54,15 +54,15 @@ namespace MolkZip
             this.Content = unMolk;
         }
 
-       
+
         private void leftRingMosueEnter(object sender, MouseEventArgs e)
         {
-            
-            LeftRing.Visibility = Visibility.Visible;          
-            Storyboard story = (Storyboard)FindResource("RingAnimation");                    
+
+            LeftRing.Visibility = Visibility.Visible;
+            Storyboard story = (Storyboard)FindResource("RingAnimation");
             LeftRing.BeginStoryboard(story);
-           
-                     
+
+
         }
 
         private void leftRingMouseLeave(object sender, MouseEventArgs e)
@@ -75,7 +75,7 @@ namespace MolkZip
             RightRing.Visibility = Visibility.Visible;
             Storyboard story = (Storyboard)FindResource("RingAnimation2");
             RightRing.BeginStoryboard(story);
-         
+
         }
 
         private void rightRingMouseLeave(object sender, MouseEventArgs e)
@@ -93,21 +93,25 @@ namespace MolkZip
         {
             Storyboard story = (Storyboard)FindResource("ExitButton");
             Exit.BeginStoryboard(story);
+        }
 
-        private void menu_show(object sender, RoutedEventArgs e)
+
+
+        private void menuShow(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.hidden = !Properties.Settings.Default.hidden;
             if (Properties.Settings.Default.hidden == true)
             {
-                molk_text.Opacity = 0;
-                Unmolk_text.Opacity = 0;
+                molkText.Opacity = 0;
+                unmolkText.Opacity = 0;
+                exitText.Opacity = 0;
             }
             else
             {
-                molk_text.Opacity = 1;
-                Unmolk_text.Opacity = 1;
+                molkText.Opacity = 1;
+                unmolkText.Opacity = 1;
+                exitText.Opacity = 1;
             }
-
 
         }
     }
