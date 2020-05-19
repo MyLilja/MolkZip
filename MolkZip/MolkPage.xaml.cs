@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 using Path = System.IO.Path;
+using System.Windows.Media.Animation;
 
 namespace MolkZip
 {
@@ -73,6 +74,16 @@ namespace MolkZip
         {
             mainWindow.GoToHomePage();
         }
-        
+
+        private void exitApp2(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+        }
+
+        private void exitMouseEnter2(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            Storyboard story = (Storyboard)FindResource("ExitButton2");
+            Exit2.BeginStoryboard(story);
+        }
     }
 }

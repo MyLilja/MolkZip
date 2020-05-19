@@ -114,35 +114,13 @@
     <Resource Include="assets\Whiteboard.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="assets\Unzip.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="assets\bulb.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="assets\mail.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="assets\Unzip2.png" />
-    <Resource Include="assets\Zip2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="assets\RedArrowRight.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="assets\home.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="assets\RedArrowLeft.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="assets\Folder.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="assets\Folder2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="assets\UnzipFile.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="assets\buttonHL.png" />
@@ -162,6 +140,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="assets\MolkLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\Arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\FileArrow2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\FileArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\Exit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
