@@ -359,7 +359,10 @@
                 </Button.Background>
             </Button>
 
-
+            <!-- -->
+            <Button Content="Button" Canvas.Left="175" Canvas.Top="606" Width="98" Click="menu_show" Visibility="Visible" Opacity="0" Cursor="Hand"/>
+            <Label x:Name="molk_text" Content="Molk Files" Canvas.Left="317" Canvas.Top="477" Width="74" Height="43" FontFamily="Kristen ITC" FontSize="24" Opacity="0" FontWeight="Bold"/>
+            <Label x:Name="Unmolk_text" Content="Unmolk files" Canvas.Left="833" Canvas.Top="477" Width="232" Height="43" FontFamily="Tempus Sans ITC" FontSize="24" Opacity="0" FontWeight="Bold"/>
 
             <Image x:Name="RightRing" Height="354" Canvas.Left="716" Canvas.Top="212" Width="430" Source="assets/buttonHL.png" RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
 
@@ -381,6 +384,7 @@
                     <ImageBrush ImageSource="assets/UnmolkPage.png"/>
                 </Button.Background>
             </Button>
+            <Label Content="Click the pen anytime to get help" Canvas.Left="103" Canvas.Top="585" Width="279" FontFamily="Kristen ITC" FontSize="15" FontWeight="Bold"/>
 
             <Image Height="109" Canvas.Left="484" Source="assets/MolkLogo.png" Canvas.Top="29" Width="370"/>
 

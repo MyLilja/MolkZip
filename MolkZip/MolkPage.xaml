@@ -77,7 +77,14 @@
                 </ListBox.Effect>
             </ListBox>
 
-            <Button x:Name="goBack" Canvas.Left="234" Canvas.Top="496" Width="183" Height="78" BorderBrush="{x:Null}" Click="homePage" Style="{StaticResource ButtonStyle}" ToolTip="Back to main menu!">
+
+            <!--The button and labels for text -->
+            <Button Content="Button" Canvas.Left="175" Canvas.Top="606" Width="98" Click="molk_show" Visibility="Visible" Opacity="0" Cursor="Hand"/>
+            <Label x:Name="Arrow_Text" Content="Back" Canvas.Left="304" Canvas.Top="576" Width="74" Height="43" FontFamily="Kristen ITC" FontSize="24" Opacity="0" FontWeight="Bold"/>
+            <Label x:Name="molk_Text" Content="Molk the files" Canvas.Left="817" Canvas.Top="589" Width="232" Height="43" FontFamily="Kristen ITC" FontSize="24" Opacity="0" FontWeight="Bold"/>
+            <Label x:Name="Browse_Text" Content="Browse files" Canvas.Left="540" Canvas.Top="68" Width="175" Height="43" FontFamily="Kristen ITC" FontSize="24" Opacity="0" FontWeight="Bold"/>
+
+            <Button x:Name="goBack" Canvas.Left="258" Canvas.Top="512" Width="141" Height="64" BorderBrush="{x:Null}" Click="homePage" Style="{StaticResource ButtonStyle}" ToolTip="Back to main menu!">
                 <Button.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.6" Direction="301"/>
                 </Button.Effect>
@@ -86,7 +93,7 @@
                 </Button.Background>
             </Button>
 
-            <Button x:Name="zipFiles" Canvas.Left="845" Canvas.Top="476" Width="171" Height="120" BorderBrush="{x:Null}" Style="{StaticResource ButtonStyle}" ToolTip="Molk the files">
+            <Button x:Name="zipFiles" Canvas.Left="849" Canvas.Top="488" Width="120" Height="106" BorderBrush="{x:Null}" Style="{StaticResource ButtonStyle}" ToolTip="Molk the files" Click="Molk">
                 <Button.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
                 </Button.Effect>
@@ -94,6 +101,7 @@
                     <ImageBrush ImageSource="assets/MolkZip.png"></ImageBrush>
                 </Button.Background>
             </Button>
+
 
             <Button x:Name="Exit2"  Canvas.Left="1158" Canvas.Top="29" Width="58" Height="84" BorderBrush="{x:Null}" Style="{StaticResource ButtonStyle}" Click="exitApp2" MouseEnter="exitMouseEnter2" RenderTransformOrigin="0.5,0.5">
                 <Button.RenderTransform>
@@ -111,6 +119,15 @@
                     <ImageBrush ImageSource="assets/Exit.png"/>
                 </Button.Background>
             </Button>
+
+
+            <ListBox x:Name="Choosen_files" Height="336" Canvas.Left="720" Canvas.Top="133" Width="420" SelectionMode="Multiple">
+                <ListBox.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
+                </ListBox.Effect>
+            </ListBox>
+            <Button x:Name="Add_button" Content="Add" Canvas.Left="603" Canvas.Top="278" Width="75" Click="select_files"/>
+            <Button x:Name="remove_button" Content="Remove" Canvas.Left="603" Canvas.Top="334" Width="75" Click="remove_files"/>
 
         </Canvas>
 

@@ -27,8 +27,12 @@ namespace MolkZip
         public MainWindow()
         {
             InitializeComponent();
+            if (Properties.Settings.Default.hidden == false)
+            {
+                molk_text.Opacity = 1;
+                Unmolk_text.Opacity = 1;
+            }
             content = Content;
-           
         }
 
         public void GoToHomePage()
@@ -79,6 +83,7 @@ namespace MolkZip
             RightRing.Visibility = Visibility.Hidden;
         }
 
+
         private void exitApp(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.GetCurrentProcess().Kill();
@@ -88,6 +93,22 @@ namespace MolkZip
         {
             Storyboard story = (Storyboard)FindResource("ExitButton");
             Exit.BeginStoryboard(story);
+
+        private void menu_show(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.hidden = !Properties.Settings.Default.hidden;
+            if (Properties.Settings.Default.hidden == true)
+            {
+                molk_text.Opacity = 0;
+                Unmolk_text.Opacity = 0;
+            }
+            else
+            {
+                molk_text.Opacity = 1;
+                Unmolk_text.Opacity = 1;
+            }
+
+
         }
     }
 }

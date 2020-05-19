@@ -89,6 +89,15 @@
                 </Button.Background>
             </Button>
 
+
+            <!--The button and labels for text -->
+            <Button Content="Button" Canvas.Left="175" Canvas.Top="606" Width="98" Click="Unmolk_show" Visibility="Visible" Opacity="0" Cursor="Hand"/>
+            <Label x:Name="Arrow_Text" Content="Back" Canvas.Left="296" Canvas.Top="559" Width="74" Height="43" FontFamily="Kristen ITC" FontSize="24" Opacity="0" FontWeight="Bold"/>
+            <Label x:Name="Unmolk_Text" Content="Unmolk the files" Canvas.Left="843" Canvas.Top="578" Width="232" Height="43" FontFamily="Kristen ITC" FontSize="24" Opacity="0" FontWeight="Bold"/>
+            <Label x:Name="Browse_Text" Content="Browse files" Canvas.Left="540" Canvas.Top="68" Width="175" Height="43" FontFamily="Kristen ITC" FontSize="24" Opacity="0" FontWeight="Bold"/>
+        </Canvas>
+
+
             <Button x:Name="Exit3"  Canvas.Left="1158" Canvas.Top="29" Width="58" Height="84" BorderBrush="{x:Null}" Style="{StaticResource ButtonStyle}" Click="exitApp3" RenderTransformOrigin="0.5,0.5" MouseEnter="exitMouseEnter3">
                 <Button.RenderTransform>
                     <TransformGroup>

@@ -18,6 +18,12 @@ namespace MolkZip
         {
             InitializeComponent();
             this.mainWindow = mainWindow;
+            if (Properties.Settings.Default.hidden == false)
+            {
+                Unmolk_Text.Opacity = 1;
+                Browse_Text.Opacity = 1;
+                Arrow_Text.Opacity = 1;
+            }
         }
 
 
@@ -33,6 +39,22 @@ namespace MolkZip
             filepath.ShowDialog();
             Path_Name.Text = filepath.FileName;
         }
+        private void Unmolk_show(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.hidden = !Properties.Settings.Default.hidden;
+            if(Properties.Settings.Default.hidden == true)
+            {
+                Unmolk_Text.Opacity = 0;
+                Browse_Text.Opacity = 0;
+                Arrow_Text.Opacity = 0;
+            }
+            else
+            {
+                Unmolk_Text.Opacity = 1;
+                Browse_Text.Opacity = 1;
+                Arrow_Text.Opacity = 1;
+            }
+
 
         private void exitApp3(object sender, RoutedEventArgs e)
         {
@@ -43,6 +65,7 @@ namespace MolkZip
         {
             Storyboard story = (Storyboard)FindResource("ExitButton3");
             Exit3.BeginStoryboard(story);
+
         }
     }
 }

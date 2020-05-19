@@ -22,5 +22,17 @@ namespace MolkZip.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool hidden {
+            get {
+                return ((bool)(this["hidden"]));
+            }
+            set {
+                this["hidden"] = value;
+            }
+        }
     }
 }
