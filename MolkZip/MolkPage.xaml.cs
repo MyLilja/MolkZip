@@ -60,12 +60,10 @@ namespace MolkZip
                 foreach (string file in files)
                 {
                     listFiles.Items.Add(Path.GetFileName(file));
-                    items.Add(Path.GetFileName(file), Path.GetFullPath(file));
                 }
                 foreach (string dir in _directory)
                 {
                     listFiles.Items.Add(Path.GetFileName(dir));
-                    items.Add(Path.GetFileName(dir), Path.GetFullPath(dir));
                 }
 
             }
@@ -104,6 +102,7 @@ namespace MolkZip
                     if (!Choosen_files.Items.Contains(item))
                     {
                         Choosen_files.Items.Add(item);
+                        items.Add(item, folderName.Text + "\\" + item);
                     }
                 }
              }
@@ -115,6 +114,33 @@ namespace MolkZip
             target.Filter = "Molk|*.molk";
             target.Title = "Save Molk file";
             target.ShowDialog();
+
+            Process proc = new Process();
+
+            proc.StartInfo.FileName = "cmd.exe";
+            proc.StartInfo.RedirectStandardInput = true;
+            proc.StartInfo.RedirectStandardOutput = true;
+            proc.StartInfo.RedirectStandardError = true;
+            proc.StartInfo.CreateNoWindow = true;
+            proc.StartInfo.UseShellExecute = false;
+
+            string command = "molk -j " + target.FileName + " ";
+            foreach(KeyValuePair<string, string> entry in items)
+            {
+                command += '"' + entry.Value + '"' + " ";
+            }
+            bool once = true;
+            while (once)
+            {
+
+                proc.Start();
+                proc.StandardInput.WriteLine($"{command}");
+                proc.StandardInput.Flush();
+                proc.StandardInput.Close();
+
+                proc.WaitForExit();
+                once = false;
+            }
         }
 
         private void remove_files(object sender, RoutedEventArgs e)
@@ -124,7 +150,6 @@ namespace MolkZip
             {
                 files.Add(item);
             }
-
             for (int i = 0; i < Choosen_files.SelectedItems.Count+1; i++)
             {
                 items.Remove(files[i]);
