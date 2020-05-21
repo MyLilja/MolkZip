@@ -2,8 +2,12 @@
 using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Windows.Media.Animation;
+using WinForms = System.Windows.Forms;
 using TextBox = System.Windows.Controls.TextBox;
 using ToolTip = System.Windows.Controls.ToolTip;
+using System.Diagnostics;
+using System.Text.RegularExpressions;
+
 
 namespace MolkZip
 {
@@ -37,8 +41,56 @@ namespace MolkZip
         {
             OpenFileDialog filepath = new OpenFileDialog();
             filepath.Filter = "Molk Files|*.molk";
-            filepath.ShowDialog();
+            DialogResult result = filepath.ShowDialog();
             Path_Name.Text = filepath.FileName;
+
+            if (result == WinForms.DialogResult.OK)
+            {
+                Process proc = new Process();
+
+                proc.StartInfo.FileName = "cmd.exe";
+                proc.StartInfo.RedirectStandardInput = true;
+                proc.StartInfo.RedirectStandardOutput = true;
+                proc.StartInfo.RedirectStandardError = true;
+                proc.StartInfo.CreateNoWindow = true;
+                proc.StartInfo.UseShellExecute = false;
+
+                string command = "unmolk -l " + filepath.FileName + " > temp.txt";
+                bool once = true;
+                Regex reg = new Regex(@"(\:+\d{2}\s{3})", RegexOptions.Compiled);
+                Regex line = new Regex(@"(\r\n)");
+                string text = System.IO.File.ReadAllText("temp.txt");
+                MatchCollection matches = reg.Matches(text);
+                MatchCollection linematch = line.Matches(text);
+                foreach(Match mat in matches)
+                {
+
+                    GroupCollection groups = mat.Groups;
+                    int closLin = 0;
+
+                    foreach (Match lin in linematch)
+                    {
+                        if (lin.Index > groups[1].Index)
+                        {
+                            closLin = lin.Index;
+                            listFiles.Items.Add(text.Substring(groups[1].Index+6, (closLin - groups[1].Index-6)));
+                            // { groups[1].Index} { closLin}
+                            break;
+                        } 
+                    }  
+                }
+                while (once)
+                {
+
+                    proc.Start();
+                    proc.StandardInput.WriteLine($"{command}");
+                    proc.StandardInput.Flush();
+                    proc.StandardInput.Close();
+
+                    proc.WaitForExit();
+                    once = false;
+                }
+            } 
         }
         private void Unmolk_show(object sender, RoutedEventArgs e)
         {

@@ -116,11 +116,21 @@
             </Button>
 
             <Image Height="46" Canvas.Left="109" Canvas.Top="29" Width="138" Source="assets/MolkLogo.png"/>
+            <ListBox x:Name="Choosen_files" Height="298" Canvas.Left="720" Canvas.Top="167" Width="420" SelectionMode="Multiple">
+                <ListBox.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
+                </ListBox.Effect>
+            </ListBox>
 
 
 
 
 
         </Canvas>
+        <ListBox x:Name="listFiles" SelectionMode="Multiple" Margin="104,166,756,256">
+            <ListBox.Effect>
+                <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
+            </ListBox.Effect>
+        </ListBox>
     </Grid>
 </Page>
