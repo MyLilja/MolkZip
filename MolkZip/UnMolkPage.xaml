@@ -80,7 +80,7 @@
 
             </Button>
 
-            <Button x:Name="unZip" Canvas.Left="863" Canvas.Top="468" Width="167" Height="96" Style="{StaticResource ButtonStyle}" ToolTip="unMolk the files" RenderTransformOrigin="0.5,0.5">
+            <Button x:Name="unZip" Canvas.Left="863" Canvas.Top="468" Width="167" Height="96" Style="{StaticResource ButtonStyle}" ToolTip="unMolk the files" RenderTransformOrigin="0.5,0.5" Click="Unmolk">
                 <Button.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
                 </Button.Effect>
@@ -121,13 +121,31 @@
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
                 </ListBox.Effect>
             </ListBox>
+            <Label x:Name="addFiles" Content="Add" Canvas.Left="607" Canvas.Top="273" Width="71" FontFamily="Kristen ITC" FontSize="24" Opacity="0" FontWeight="Bold"/>
+            <Label x:Name="removeFiles" Content="Remove" Canvas.Left="587" Canvas.Top="416" Width="112" FontFamily="Kristen ITC" FontSize="24" Opacity="0" FontWeight="Bold"/>
+            <Button x:Name="Add_button" Canvas.Left="603" Canvas.Top="186" Width="75" Height="82" BorderBrush="{x:Null}" Style="{StaticResource ButtonStyle}" ToolTip="Add selected files" Click="add_files">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
+                </Button.Effect>
+                <Button.Background>
+                    <ImageBrush ImageSource="assets/FileArrow.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="remove_button"  Canvas.Left="603" Canvas.Top="334" Width="75" Height="82" BorderBrush="{x:Null}" Style="{StaticResource ButtonStyle}" ToolTip="Remove selected files" Click="remove_files">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
+                </Button.Effect>
+                <Button.Background>
+                    <ImageBrush ImageSource="assets/FileArrow2.png"/>
+                </Button.Background>
+            </Button>
 
 
 
 
 
         </Canvas>
-        <ListBox x:Name="listFiles" SelectionMode="Multiple" Margin="104,166,756,256">
+        <ListBox x:Name="listFiles" Height="298" SelectionMode="Multiple" Margin="104,166,756,256">
             <ListBox.Effect>
                 <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
             </ListBox.Effect>
