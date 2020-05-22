@@ -189,7 +189,6 @@ namespace MolkZip
              {
 
                  proc.Start();
-                WinForms.MessageBox.Show($"{command}-d " + target.SelectedPath);
                  proc.StandardInput.WriteLine($"{command}-d " + target.SelectedPath);
                  proc.StandardInput.Flush();
                  proc.StandardInput.Close();
