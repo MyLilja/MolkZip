@@ -19,9 +19,15 @@ namespace MolkZip
     /// </summary>
     public partial class UnMolkPage : Page
     {
+
+        #region Fields
+
         private MainWindow mainWindow;
         private System.Windows.Forms.Timer timer2;
         private int counter = 10;
+        #endregion
+
+        #region Initialize
 
         public UnMolkPage(MainWindow mainWindow)
         {
@@ -37,10 +43,13 @@ namespace MolkZip
                 removeFiles.Opacity = 1;
             }
         }
+        #endregion
 
+        #region Methods
 
         private void PreviousPageClick(object sender, RoutedEventArgs e)
         {
+            //back to main menu
             mainWindow.GoToHomePage();
         }
 
@@ -215,7 +224,7 @@ namespace MolkZip
 
         private void Progress()
         {
-
+            //UX design, giving the illusion of progress loading
             timer2 = new System.Windows.Forms.Timer();
             timer2.Tick += new EventHandler(timer2_Tick);
             timer2.Interval = 1000; // 1 second
@@ -225,10 +234,11 @@ namespace MolkZip
 
         private void timer2_Tick(object sender, EventArgs e)
         {
+            //Second part of progress duration
             counter--;
             if (counter == 0)
                 timer2.Stop();
-            progress2.Visibility = Visibility.Hidden;
+                progress2.Visibility = Visibility.Hidden;
 
         }
 
@@ -238,5 +248,7 @@ namespace MolkZip
             listFiles.SelectAll();
             chosenFiles.SelectAll();
         }
+
+        #endregion
     }
 }

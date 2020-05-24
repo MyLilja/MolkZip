@@ -348,7 +348,7 @@
             <Label x:Name="unmolkText" Content="UnMolk Files" Canvas.Left="838" Canvas.Top="515" Width="202" Height="43" Style="{StaticResource KITC}" FontSize="35" Opacity="0" FontWeight="Bold"/>
             <Label x:Name="exitText" Content="Exit" Canvas.Left="1155" Canvas.Top="107" Width="79" Height="43" Style="{StaticResource KITC}" FontSize="35" Opacity="0" FontWeight="Bold"/>
 
-            <Button x:Name="Exit"  Canvas.Left="1158" Canvas.Top="29" Width="58" Height="84" BorderBrush="{x:Null}" Style="{StaticResource ButtonStyle}" Click="exitApp" RenderTransformOrigin="0.5,0.5" MouseEnter="exitMouseEnter" ToolTip="Exit Program">
+            <Button x:Name="Exit"  Canvas.Left="1158" Canvas.Top="29" Width="58" Height="84" BorderBrush="{x:Null}" Style="{StaticResource ButtonStyle}" Click="ExitApp" RenderTransformOrigin="0.5,0.5" MouseEnter="ExitMouseEnter" ToolTip="Exit Program">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -377,7 +377,7 @@
                 </Image.RenderTransform>
             </Image>
 
-            <Button x:Name="Molk" Canvas.Left="246" Canvas.Top="235" Width="202" Height="272" BorderBrush="{x:Null}" Click="openMolkPage" Style="{StaticResource ButtonStyle}" MouseEnter="leftRingMosueEnter" MouseLeave="leftRingMouseLeave" ToolTip="Molk files">
+            <Button x:Name="Molk" Canvas.Left="246" Canvas.Top="235" Width="202" Height="272" BorderBrush="{x:Null}" Click="OpenMolkPage" Style="{StaticResource ButtonStyle}" MouseEnter="LeftRingMosueEnter" MouseLeave="LeftRingMouseLeave" ToolTip="Molk files">
                 <Button.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301">
                     </DropShadowEffect>
@@ -400,7 +400,7 @@
                 </Image.RenderTransform>
             </Image>
 
-            <Button x:Name="Unmolk" Canvas.Left="822" Canvas.Top="235" Width="218" Height="272" BorderBrush="{x:Null}" Click="openUnMolkPage" Style="{StaticResource ButtonStyle}" MouseEnter="rightRingMosueEnter" MouseLeave="rightRingMouseLeave" ToolTip="Unmolk files" >
+            <Button x:Name="Unmolk" Canvas.Left="822" Canvas.Top="235" Width="218" Height="272" BorderBrush="{x:Null}" Click="OpenUnMolkPage" Style="{StaticResource ButtonStyle}" MouseEnter="RightRingMosueEnter" MouseLeave="RightRingMouseLeave" ToolTip="Unmolk files" >
                 <Button.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="11" Opacity="0.4" Direction="301"/>
                 </Button.Effect>
@@ -411,7 +411,7 @@
 
             <Image Height="109" Canvas.Left="484" Source="assets/MolkLogo.png" Canvas.Top="29" Width="370"/>
 
-            <Button Content="Button" Canvas.Left="184" Canvas.Top="631" Width="98" Click="menuShow" Visibility="Visible" Opacity="0" Cursor="Hand"/>
+            <Button Content="Button" Canvas.Left="184" Canvas.Top="631" Width="98" Click="MenuShow" Visibility="Visible" Opacity="0" Cursor="Hand"/>
 
 
         </Canvas>

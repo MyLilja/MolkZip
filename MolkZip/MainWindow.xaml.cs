@@ -21,8 +21,12 @@ namespace MolkZip
     /// </summary>
     public partial class MainWindow : Window
     {
-        private object content;
+        #region Fields
 
+        private object content;
+        #endregion
+
+        #region Initialize
 
         public MainWindow()
         {
@@ -33,75 +37,82 @@ namespace MolkZip
                 unmolkText.Opacity = 1;
             }
             content = Content;
-
-            //Uri iconUri = new Uri ("pack://application:,,,/Icon1.ico", UriKind.RelativeOrAbsolute);
-            //this.Icon = BitmapFrame.Create(iconUri);
         }
+        #endregion
+
+        #region Methods
 
         public void GoToHomePage()
         {
+            //Marks this page as homepage
             Content = content;
         }
 
-        private void openMolkPage(object sender, RoutedEventArgs e)
+        private void OpenMolkPage(object sender, RoutedEventArgs e)
         {
+            //Opens up the Molk Page
             MolkPage molk = new MolkPage(this);
             this.Content = molk;
         }
 
 
 
-        private void openUnMolkPage(object sender, RoutedEventArgs e)
+        private void OpenUnMolkPage(object sender, RoutedEventArgs e)
         {
+            //Opens up the UnMolk Page
             UnMolkPage unMolk = new UnMolkPage(this);
             this.Content = unMolk;
         }
 
 
-        private void leftRingMosueEnter(object sender, MouseEventArgs e)
+        private void LeftRingMosueEnter(object sender, MouseEventArgs e)
         {
-
+            //Animation of left ring
             LeftRing.Visibility = Visibility.Visible;
             Storyboard story = (Storyboard)FindResource("RingAnimation");
             LeftRing.BeginStoryboard(story);
-
-
         }
 
-        private void leftRingMouseLeave(object sender, MouseEventArgs e)
+        private void LeftRingMouseLeave(object sender, MouseEventArgs e)
         {
+            //Hides animation of left ring
             LeftRing.Visibility = Visibility.Hidden;
         }
 
-        private void rightRingMosueEnter(object sender, MouseEventArgs e)
+        private void RightRingMosueEnter(object sender, MouseEventArgs e)
         {
+            //Animation of right ring
             RightRing.Visibility = Visibility.Visible;
             Storyboard story = (Storyboard)FindResource("RingAnimation2");
             RightRing.BeginStoryboard(story);
 
         }
 
-        private void rightRingMouseLeave(object sender, MouseEventArgs e)
+        private void RightRingMouseLeave(object sender, MouseEventArgs e)
         {
+            //Hides animation of right ring
             RightRing.Visibility = Visibility.Hidden;
         }
 
 
-        private void exitApp(object sender, RoutedEventArgs e)
+        private void ExitApp(object sender, RoutedEventArgs e)
         {
+            //Turns off the app
             System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
 
-        private void exitMouseEnter(object sender, MouseEventArgs e)
+        private void ExitMouseEnter(object sender, MouseEventArgs e)
         {
+            //Animation for exit button
             Storyboard story = (Storyboard)FindResource("ExitButton");
             Exit.BeginStoryboard(story);
         }
 
 
 
-        private void menuShow(object sender, RoutedEventArgs e)
+        private void MenuShow(object sender, RoutedEventArgs e)
         {
+            //Method for viewing help texts by clicking the pen
             Properties.Settings.Default.hidden = !Properties.Settings.Default.hidden;
             if (Properties.Settings.Default.hidden == true)
             {
@@ -117,5 +128,6 @@ namespace MolkZip
             }
 
         }
+        #endregion
     }
 }

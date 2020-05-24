@@ -53,7 +53,7 @@ namespace MolkZip
 
         private void BrowseFiles(object sender, RoutedEventArgs e)
         {
-
+            //Opens up a folder dialog and displays the files in a listBox
             FolderBrowserDialog folderDialog = new FolderBrowserDialog();
             folderDialog.ShowNewFolderButton = false;
             folderDialog.SelectedPath = System.AppDomain.CurrentDomain.BaseDirectory;
@@ -101,17 +101,20 @@ namespace MolkZip
 
         private void PreviousPageClick(object sender, RoutedEventArgs e)
         {
+            //back to main menu
             mainWindow.GoToHomePage();
         }
 
 
         private void ExitApp2(object sender, RoutedEventArgs e)
         {
+            //Turns off the app
             System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
 
         private void ExitMouseEnter2(object sender, System.Windows.Input.MouseEventArgs e)
         {
+            //Animation for exit button
             Storyboard story = (Storyboard)FindResource("ExitButton2");
             Exit2.BeginStoryboard(story);
         }
@@ -157,7 +160,7 @@ namespace MolkZip
 
         private void Progress()
         {
-            
+            //UX design, giving the illusion of progress loading
             timer1 = new System.Windows.Forms.Timer();
             timer1.Tick += new EventHandler(timer1_Tick);
             timer1.Interval = 1000; // 1 second
@@ -168,6 +171,7 @@ namespace MolkZip
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            //Second part of progress duration
             counter--;
             if (counter == 0)
                 timer1.Stop();
@@ -245,6 +249,7 @@ namespace MolkZip
 
         private void SelectAllExecuted(object sender, ExecutedRoutedEventArgs e)
         {
+            //CTRL + A for selecting all files in listBoxes
             listFiles.SelectAll();
             chosenFiles.SelectAll();
         }
