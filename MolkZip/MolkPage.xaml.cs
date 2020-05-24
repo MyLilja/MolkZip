@@ -89,11 +89,11 @@ namespace MolkZip
 
                 foreach (string file in files)
                 {
-                    listFiles.Items.Add(file);
+                    listFiles.Items.Add(Path.GetFileName(file));
                 }
                 foreach (string dir in _directory)
                 {
-                    listFiles.Items.Add(dir);
+                    listFiles.Items.Add(Path.GetFileName(dir));
                 }
 
             }
@@ -158,12 +158,12 @@ namespace MolkZip
             Progress();          
         }
 
-        private void Progress()
+        private void Progress(int time = 1000)
         {
             //UX design, giving the illusion of progress loading
             timer1 = new System.Windows.Forms.Timer();
             timer1.Tick += new EventHandler(timer1_Tick);
-            timer1.Interval = 1000; // 1 second
+            timer1.Interval = time; // 1 second
             timer1.Start();
            
             

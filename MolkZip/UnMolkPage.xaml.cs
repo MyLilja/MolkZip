@@ -9,12 +9,10 @@ using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System;
-<<<<<<< HEAD
 using System.IO;
-=======
 using System.Windows.Input;
 using MessageBox = System.Windows.MessageBox;
->>>>>>> 62f891cffa89f353b14274162f2e2384f877a9a3
+using System.Threading;
 
 namespace MolkZip
 {
@@ -76,9 +74,27 @@ namespace MolkZip
                 proc.StartInfo.RedirectStandardError = true;
                 proc.StartInfo.CreateNoWindow = true;
                 proc.StartInfo.UseShellExecute = false;
+                using (FileStream fs = File.Create("temp.txt"))
+                {
 
+                }
+                using (FileStream fs = File.Create("temp.txt"))
+                {
+
+                }
                 string command = "unmolk -l " + filepath.FileName + " > temp.txt";
                 bool once = true;
+                while (once)
+                {
+
+                    proc.Start();
+                    proc.StandardInput.WriteLine($"{command}");
+                    proc.StandardInput.Flush();
+                    proc.StandardInput.Close();
+
+                    proc.WaitForExit();
+                    once = false;
+                }
                 Regex reg = new Regex(@"(\:+\d{2}\s{3})", RegexOptions.Compiled);
                 Regex line = new Regex(@"(\r\n)");
                 string text = System.IO.File.ReadAllText("temp.txt");
@@ -205,6 +221,7 @@ namespace MolkZip
             proc.StartInfo.CreateNoWindow = true;
             proc.StartInfo.UseShellExecute = false;
 
+
             string command = "unmolk -o " + Path_Name.Text + " ";
             foreach (string item in chosenFiles.Items)
             {
@@ -226,12 +243,12 @@ namespace MolkZip
             Progress();
         }
 
-        private void Progress()
+        private void Progress(int time = 1000)
         {
             //UX design, giving the illusion of progress loading
             timer2 = new System.Windows.Forms.Timer();
             timer2.Tick += new EventHandler(timer2_Tick);
-            timer2.Interval = 1000; // 1 second
+            timer2.Interval = time; // 1 second
             timer2.Start();
 
         }
