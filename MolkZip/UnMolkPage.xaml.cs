@@ -9,7 +9,12 @@ using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System;
+<<<<<<< HEAD
 using System.IO;
+=======
+using System.Windows.Input;
+using MessageBox = System.Windows.MessageBox;
+>>>>>>> 62f891cffa89f353b14274162f2e2384f877a9a3
 
 namespace MolkZip
 {
@@ -18,7 +23,15 @@ namespace MolkZip
     /// </summary>
     public partial class UnMolkPage : Page
     {
+
+        #region Fields
+
         private MainWindow mainWindow;
+        private System.Windows.Forms.Timer timer2;
+        private int counter = 10;
+        #endregion
+
+        #region Initialize
 
         public UnMolkPage(MainWindow mainWindow)
         {
@@ -30,12 +43,17 @@ namespace MolkZip
                 browseText.Opacity = 1;
                 arrowText.Opacity = 1;
                 exitText.Opacity = 1;
+                addFiles.Opacity = 1;
+                removeFiles.Opacity = 1;
             }
         }
+        #endregion
 
+        #region Methods
 
-        private void previousPage_Click(object sender, RoutedEventArgs e)
+        private void PreviousPageClick(object sender, RoutedEventArgs e)
         {
+            //back to main menu
             mainWindow.GoToHomePage();
         }
 
@@ -46,6 +64,7 @@ namespace MolkZip
             DialogResult result = filepath.ShowDialog();
             Path_Name.Text = filepath.FileName;
             //It works! I don't know how and i don't question it!
+
             if (result == WinForms.DialogResult.OK)
             {
                 listFiles.Items.Clear();
@@ -65,7 +84,7 @@ namespace MolkZip
                 string text = System.IO.File.ReadAllText("temp.txt");
                 MatchCollection matches = reg.Matches(text);
                 MatchCollection linematch = line.Matches(text);
-                foreach(Match mat in matches)
+                foreach (Match mat in matches)
                 {
 
                     GroupCollection groups = mat.Groups;
@@ -76,10 +95,10 @@ namespace MolkZip
                         if (lin.Index > groups[1].Index)
                         {
                             closLin = lin.Index;
-                            listFiles.Items.Add(text.Substring(groups[1].Index+6, (closLin - groups[1].Index-6)));
+                            listFiles.Items.Add(text.Substring(groups[1].Index + 6, (closLin - groups[1].Index - 6)));
                             break;
-                        } 
-                    }  
+                        }
+                    }
                 }
                 while (once)
                 {
@@ -92,10 +111,12 @@ namespace MolkZip
                     proc.WaitForExit();
                     once = false;
                 }
-            } 
+            }
         }
-        private void Unmolk_show(object sender, RoutedEventArgs e)
+
+        private void UnMolkShow(object sender, RoutedEventArgs e)
         {
+            //Method for viewing help texts by clicking the pen
             Properties.Settings.Default.hidden = !Properties.Settings.Default.hidden;
             if (Properties.Settings.Default.hidden == true)
             {
@@ -118,85 +139,120 @@ namespace MolkZip
 
         }
 
-        private void exitApp3(object sender, RoutedEventArgs e)
+        private void ExitApp3(object sender, RoutedEventArgs e)
         {
+            //Turns off the app
             System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
 
-        private void exitMouseEnter3(object sender, System.Windows.Input.MouseEventArgs e)
+        private void ExitMouseEnter3(object sender, System.Windows.Input.MouseEventArgs e)
         {
+            //Animation for exit button
             Storyboard story = (Storyboard)FindResource("ExitButton3");
             Exit3.BeginStoryboard(story);
 
         }
 
-        private void remove_files(object sender, RoutedEventArgs e)
+        private void RemoveFiles(object sender, RoutedEventArgs e)
         {
+            //remove files from right listBox
             List<string> files = new List<string>();
             try
             {
-                foreach (string item in Choosen_files.SelectedItems)
+                foreach (string item in chosenFiles.SelectedItems)
                 {
                     files.Add(item);
                 }
 
-                for (int i = 0; i < Choosen_files.SelectedItems.Count + 1; i++)
+                for (int i = 0; i < chosenFiles.SelectedItems.Count + 1; i++)
                 {
-                    Choosen_files.Items.Remove(files[i]);
+                    chosenFiles.Items.Remove(files[i]);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                System.Windows.MessageBox.Show("Invalid Operation. " + ex.Message, "No files to remove from this list.", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("No files have been chosen. Select your files that you want to remove first. ", "Invalid operation", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
-        private void add_files(object sender, RoutedEventArgs e)
+        private void AddFiles(object sender, RoutedEventArgs e)
         {
+            //Add files to right listBox from left listBox
             foreach (string item in listFiles.SelectedItems)
             {
-                for (int i = 0; i < Choosen_files.Items.Count + 1; i++)
+                for (int i = 0; i < chosenFiles.Items.Count + 1; i++)
                 {
-                    if (!Choosen_files.Items.Contains(item))
+                    if (!chosenFiles.Items.Contains(item))
                     {
-                        Choosen_files.Items.Add(item);
+                        chosenFiles.Items.Add(item);
                     }
                 }
             }
         }
 
-         private void Unmolk(object sender, RoutedEventArgs e)
-         {
+        private void UnMolk(object sender, RoutedEventArgs e)
+        {
             FolderBrowserDialog target = new FolderBrowserDialog();
             target.ShowNewFolderButton = false;
             target.SelectedPath = System.AppDomain.CurrentDomain.BaseDirectory;
             target.ShowDialog();
             Process proc = new Process();
 
-             proc.StartInfo.FileName = "cmd.exe";
-             proc.StartInfo.RedirectStandardInput = true;
-             proc.StartInfo.RedirectStandardOutput = true;
-             proc.StartInfo.RedirectStandardError = true;
-             proc.StartInfo.CreateNoWindow = true;
-             proc.StartInfo.UseShellExecute = false;
+            proc.StartInfo.FileName = "cmd.exe";
+            proc.StartInfo.RedirectStandardInput = true;
+            proc.StartInfo.RedirectStandardOutput = true;
+            proc.StartInfo.RedirectStandardError = true;
+            proc.StartInfo.CreateNoWindow = true;
+            proc.StartInfo.UseShellExecute = false;
 
-             string command = "unmolk -o " + Path_Name.Text + " ";
-             foreach (string item in Choosen_files.Items)
-             {
-                 command += item + " ";
-             }
-             bool once = true;
-             while (once)
-             {
+            string command = "unmolk -o " + Path_Name.Text + " ";
+            foreach (string item in chosenFiles.Items)
+            {
+                command += item + " ";
+            }
+            bool once = true;
+            while (once)
+            {
 
-                 proc.Start();
-                 proc.StandardInput.WriteLine($"{command}-d " + target.SelectedPath);
-                 proc.StandardInput.Flush();
-                 proc.StandardInput.Close();
+                proc.Start();
+                proc.StandardInput.WriteLine($"{command}-d " + target.SelectedPath);
+                proc.StandardInput.Flush();
+                proc.StandardInput.Close();
 
-                 proc.WaitForExit();
-                 once = false;
-             }
-         }
+                proc.WaitForExit();
+                once = false;
+            }
+            progress2.Visibility = Visibility.Visible;
+            Progress();
+        }
+
+        private void Progress()
+        {
+            //UX design, giving the illusion of progress loading
+            timer2 = new System.Windows.Forms.Timer();
+            timer2.Tick += new EventHandler(timer2_Tick);
+            timer2.Interval = 1000; // 1 second
+            timer2.Start();
+
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            //Second part of progress duration
+            counter--;
+            if (counter == 0)
+                timer2.Stop();
+                progress2.Visibility = Visibility.Hidden;
+
+        }
+
+        private void SelectAllExecuted(object sender, ExecutedRoutedEventArgs e)
+        {
+            //CTRL + A for listBoxes
+            listFiles.SelectAll();
+            chosenFiles.SelectAll();
+        }
+
+        #endregion
     }
 }
