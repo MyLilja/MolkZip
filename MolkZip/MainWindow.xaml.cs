@@ -33,6 +33,9 @@ namespace MolkZip
                 unmolkText.Opacity = 1;
             }
             content = Content;
+
+            //Uri iconUri = new Uri ("pack://application:,,,/Icon1.ico", UriKind.RelativeOrAbsolute);
+            //this.Icon = BitmapFrame.Create(iconUri);
         }
 
         public void GoToHomePage()
